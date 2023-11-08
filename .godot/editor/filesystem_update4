@@ -1,0 +1,5 @@
+res://Scripts/Main.gd
+res://Scenes/main.tscn
+res://Scenes/mitter.tscn
+res://Scenes/kitchen.tscn
+res://Scenes/player.tscn
