@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var speed : float = 100.0
 @onready var anim_tree : AnimationTree = $AnimationTree
+#@onready var ray: RayCast2D = $RayCast2D
 var direction : Vector2 = Vector2.ZERO
 
 func _ready():
@@ -22,6 +23,7 @@ func _physics_process(delta):
 
 func _process(delta):
 	update_animation()
+#	update_marker()
 
 func update_animation():
 	if velocity == Vector2.ZERO:
@@ -34,3 +36,7 @@ func update_animation():
 	if direction != Vector2.ZERO:
 		anim_tree["parameters/Idle/blend_position"] = direction
 		anim_tree["parameters/Walk/blend_position"] = direction
+
+#func update_marker():
+#	if direction != Vector2.ZERO:
+#		ray.target_position = direction * 16

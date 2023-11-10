@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=3 uid="uid://bywc1e4eendjg"]
+
+[ext_resource type="Script" path="res://Customer.gd" id="1_q7xjq"]
+[ext_resource type="Texture2D" uid="uid://ch0v087jakit0" path="res://Assets/Environment/kitchen_sheet.png" id="2_q5qql"]
+[ext_resource type="PackedScene" uid="uid://cuydttaxpol3s" path="res://Interaction/interact_area.tscn" id="3_ufrya"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dg6gh"]
+size = Vector2(16, 7.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqxsg"]
+atlas = ExtResource("2_q5qql")
+region = Rect2(144, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6k2ek"]
+atlas = ExtResource("2_q5qql")
+region = Rect2(128, 48, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_duxmq"]
+atlas = ExtResource("2_q5qql")
+region = Rect2(144, 48, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cx0a"]
+atlas = ExtResource("2_q5qql")
+region = Rect2(128, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8sck3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqxsg")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_6k2ek")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_duxmq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cx0a")
+}],
+"loop": true,
+"name": &"mad",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dkotc"]
+radius = 25.02
+
+[node name="Customer" type="StaticBody2D"]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_q7xjq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3.75)
+shape = SubResource("RectangleShape2D_dg6gh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8sck3")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.964424
+offset = Vector2(0, -16)
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_ufrya")]
+position = Vector2(0, -17)
+action_name = "talk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 10)
+shape = SubResource("CircleShape2D_dkotc")

@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://cu66ev763ra3h"]
+
+[ext_resource type="Texture2D" uid="uid://cgbrjsikoe67r" path="res://Assets/Environment/spriteshet1.png" id="1_mriuh"]
+[ext_resource type="Script" path="res://Scripts/Box.gd" id="1_yexdq"]
+[ext_resource type="PackedScene" uid="uid://cuydttaxpol3s" path="res://Interaction/interact_area.tscn" id="2_cjhyc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yl3f"]
+atlas = ExtResource("1_mriuh")
+region = Rect2(80, 32, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5rhq6"]
+size = Vector2(16, 8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p2ivc"]
+radius = 31.0161
+
+[node name="Box" type="StaticBody2D"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(0, -8)
+script = ExtResource("1_yexdq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
+texture = SubResource("AtlasTexture_2yl3f")
+offset = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_5rhq6")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_cjhyc")]
+action_name = "open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_p2ivc")

@@ -468,11 +468,12 @@ states/Walk/position = Vector2(463, 139)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_3y0dk"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_a4qyk"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_o6rve")]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qjwc3"]
-size = Vector2(14, 6)
+size = Vector2(14, 7)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 1
 y_sort_enabled = true
+collision_layer = 2
 script = ExtResource("1_6mwdw")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
@@ -480,6 +481,7 @@ sprite_frames = SubResource("SpriteFrames_se6ei")
 animation = &"idle_down"
 frame = 1
 offset = Vector2(0, -16)
+metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -496,5 +498,5 @@ parameters/Idle/blend_position = Vector2(0, 0.975109)
 parameters/Walk/blend_position = Vector2(-0.00160003, 0.888646)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3)
+position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_qjwc3")

@@ -1,10 +1,30 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1699417766
+::res://::1699568210
 README.md::TextFile::-1::1698753459::0::1::::<><>::
-::res://Assets/::1699417766
+::res://Assets/::1699564188
 icon.svg::CompressedTexture2D::4125459072029121678::1699415203::1699416084::1::::<><>::
-::res://Assets/Environment/::1699417766
+::res://Assets/Environment/::1699564233
+ingredient.png::CompressedTexture2D::8578964633601046082::1699503865::1699503867::1::::<><>::
+kitchen_sheet.png::CompressedTexture2D::5317094201513259183::1699568145::1699568211::1::::<><>::
 spriteshet1.png::CompressedTexture2D::5197088026242625165::1699416981::1699417767::1::::<><>::
+::res://Assets/Fonts/::1699484571
+::res://Assets/Fonts/kenney_kenney-fonts/::1699484571
+License.txt::TextFile::-1::1699484571::0::1::::<><>::
+::res://Assets/Fonts/kenney_kenney-fonts/Fonts/::1699484571
+Kenney Blocks.ttf::FontFile::4953673845981392358::1699484571::1699484571::1::::<><>::
+Kenney Future Narrow.ttf::FontFile::4660296456057849762::1699484571::1699484571::1::::<><>::
+Kenney Future.ttf::FontFile::8046693397870235152::1699484571::1699484571::1::::<><>::
+Kenney High Square.ttf::FontFile::3312014026800502369::1699484571::1699484571::1::::<><>::
+Kenney High.ttf::FontFile::5749347385294192056::1699484571::1699484571::1::::<><>::
+Kenney Mini Square Mono.ttf::FontFile::2620034102448816323::1699484571::1699484571::1::::<><>::
+Kenney Mini Square.ttf::FontFile::8347362081295384975::1699484571::1699484571::1::::<><>::
+Kenney Mini.ttf::FontFile::8476554197250788206::1699484571::1699484571::1::::<><>::
+Kenney Pixel Square.ttf::FontFile::8276814318309296651::1699484571::1699484571::1::::<><>::
+Kenney Pixel.ttf::FontFile::1736475713639797630::1699484571::1699484571::1::::<><>::
+Kenney Rocket Square.ttf::FontFile::8436212046323302212::1699484571::1699484571::1::::<><>::
+Kenney Rocket.ttf::FontFile::6070373731364594174::1699484571::1699484571::1::::<><>::
+::res://Assets/Objects/::1699564224
+food_sheet.png::CompressedTexture2D::4933450021260015891::1699564219::1699564224::1::::<><>::
 ::res://Assets/Sprites/::1699416981
 ::res://Assets/Sprites/spr_player_down/::1699417739
 4e73d772-464c-4772-8403-ee750b1c05e0.png::CompressedTexture2D::2751802706335781303::1699416981::1699417739::1::::<><>::
@@ -38,11 +58,20 @@ f863c7aa-4712-441a-bf9f-e841cb2984bf.png::CompressedTexture2D::84403107623597738
 6a028244-1245-4904-8bc5-7bef2b6ae871.png::CompressedTexture2D::2609943409429154645::1699416981::1699417739::1::::<><>::
 616441a3-15a2-4e03-8c77-264cec281492.png::CompressedTexture2D::5272458950472474032::1699416981::1699417739::1::::<><>::
 d715e099-a6e7-498c-ab95-d73a66e65b9b.png::CompressedTexture2D::6645179021430861631::1699416981::1699417739::1::::<><>::
-::res://Scenes/::1699417766
-kitchen.tscn::PackedScene::8400382299897556455::1699417766::0::1::::<><>::uid://cgbrjsikoe67r::::res://Assets/Environment/spriteshet1.png<>uid://b6bjnr0s7lado::::res://Scenes/player.tscn<>res://Scripts/FollowCam.gd
-main.tscn::PackedScene::3878626593746875520::1699417578::0::1::::<><>::res://Scripts/Main.gd
-player.tscn::PackedScene::4564909814859922252::1699417791::0::1::::<><>::res://Scripts/mitter.gd<>uid://du8vuiejlm6cs::::res://Assets/Sprites/spr_player_idl_down/4e73d772-464c-4772-8403-ee750b1c05e0.png<>uid://wvjcm0leloru::::res://Assets/Sprites/spr_player_idl_down/f863c7aa-4712-441a-bf9f-e841cb2984bf.png<>uid://b3vwruyay8o7j::::res://Assets/Sprites/spr_player_idl_left/97c162d8-eb85-4027-89a9-a3e1c7061228.png<>uid://b3yauphfbbneh::::res://Assets/Sprites/spr_player_idl_left/93408f14-4bae-4d46-8e34-5f24a5cd1f61.png<>uid://gmhsy06l0ur1::::res://Assets/Sprites/spr_player_idl_right/72ef571b-e865-470e-bf82-7ed754bdf29c.png<>uid://blited4vapdcd::::res://Assets/Sprites/spr_player_idl_right/93747206-9a97-4f4e-92bf-299f0653084d.png<>uid://buk1o5gl7np4r::::res://Assets/Sprites/spr_player_idl_up/4d1cab76-d06a-433a-a22e-5833cad186cb.png<>uid://bjqdq72tpjtv::::res://Assets/Sprites/spr_player_idl_up/616441a3-15a2-4e03-8c77-264cec281492.png<>uid://bfg812sm7kvpv::::res://Assets/Sprites/spr_player_down/4e73d772-464c-4772-8403-ee750b1c05e0.png<>uid://e1k4s52cl10::::res://Assets/Sprites/spr_player_down/e8a9b711-3996-4d79-bdcf-38950db000b9.png<>uid://d8l7arw80oc4::::res://Assets/Sprites/spr_player_down/9f8f7ed7-23cb-4574-a187-d3dc0e56f457.png<>uid://eerjq3rgliuw::::res://Assets/Sprites/spr_player_down/f863c7aa-4712-441a-bf9f-e841cb2984bf.png<>uid://qdwhm5kdfuvv::::res://Assets/Sprites/spr_player_left/97c162d8-eb85-4027-89a9-a3e1c7061228.png<>uid://chaactjuha4a7::::res://Assets/Sprites/spr_player_left/73bd93f6-e9b5-4088-b386-65597c3a9744.png<>uid://e2sm71vddher::::res://Assets/Sprites/spr_player_left/3891f80f-3ac3-41a4-a468-527abbfea489.png<>uid://dl3wdbqdu7klw::::res://Assets/Sprites/spr_player_left/f2175d88-6338-4540-a869-e12de9a2b3ac.png<>uid://bgqw0mutwgdlk::::res://Assets/Sprites/spr_player_right/8f19f55f-0175-4fcd-af53-4b776180b50b.png<>uid://xaliqsh765q4::::res://Assets/Sprites/spr_player_right/8d4e3a19-d1b5-4b27-8726-075b75470a0d.png<>uid://chbkw5thvq0ff::::res://Assets/Sprites/spr_player_right/be997335-2417-4ac0-a8b7-2297a392fdf3.png<>uid://dsisxj8u2h8xi::::res://Assets/Sprites/spr_player_right/f863c7aa-4712-441a-bf9f-e841cb2984bf.png<>uid://c1w8elrub05x8::::res://Assets/Sprites/spr_player_up/d715e099-a6e7-498c-ab95-d73a66e65b9b.png<>uid://dmbylxiwrune1::::res://Assets/Sprites/spr_player_up/4d1cab76-d06a-433a-a22e-5833cad186cb.png<>uid://cheavmwowkn5q::::res://Assets/Sprites/spr_player_up/616441a3-15a2-4e03-8c77-264cec281492.png<>uid://bdgjne7llh0ub::::res://Assets/Sprites/spr_player_up/6a028244-1245-4904-8bc5-7bef2b6ae871.png
-::res://Scripts/::1699417561
+::res://Interaction/::1699567346
+interaction_manager.tscn::PackedScene::8663992096847831686::1699567346::0::1::::<><>::uid://y0frbrfclcxq::::res://Assets/Fonts/kenney_kenney-fonts/Fonts/Kenney Pixel.ttf<>res://Scripts/InteractionManager.gd
+interact_area.tscn::PackedScene::6226380386316053302::1699567346::0::1::::<><>::res://Scripts/InteractionArea.gd
+::res://Scenes/::1699568164
+box.tscn::PackedScene::6242504474344761831::1699567346::0::1::::<><>::uid://cgbrjsikoe67r::::res://Assets/Environment/spriteshet1.png<>res://Scripts/Box.gd<>uid://cuydttaxpol3s::::res://Interaction/interact_area.tscn
+kitchen.tscn::PackedScene::8400382299897556455::1699568164::0::1::::<><>::uid://ch0v087jakit0::::res://Assets/Environment/kitchen_sheet.png<>uid://cu66ev763ra3h::::res://Scenes/box.tscn<>uid://b6bjnr0s7lado::::res://Scenes/player.tscn<>res://Scripts/FollowCam.gd<>uid://22tyrmkqdco6::::res://Scenes/strawberry.tscn
+main.tscn::PackedScene::3878626593746875520::1699567346::0::1::::<><>::res://Scripts/Main.gd
+player.tscn::PackedScene::4564909814859922252::1699567346::0::1::::<><>::res://Scripts/Player.gd<>uid://du8vuiejlm6cs::::res://Assets/Sprites/spr_player_idl_down/4e73d772-464c-4772-8403-ee750b1c05e0.png<>uid://wvjcm0leloru::::res://Assets/Sprites/spr_player_idl_down/f863c7aa-4712-441a-bf9f-e841cb2984bf.png<>uid://b3vwruyay8o7j::::res://Assets/Sprites/spr_player_idl_left/97c162d8-eb85-4027-89a9-a3e1c7061228.png<>uid://b3yauphfbbneh::::res://Assets/Sprites/spr_player_idl_left/93408f14-4bae-4d46-8e34-5f24a5cd1f61.png<>uid://gmhsy06l0ur1::::res://Assets/Sprites/spr_player_idl_right/72ef571b-e865-470e-bf82-7ed754bdf29c.png<>uid://blited4vapdcd::::res://Assets/Sprites/spr_player_idl_right/93747206-9a97-4f4e-92bf-299f0653084d.png<>uid://buk1o5gl7np4r::::res://Assets/Sprites/spr_player_idl_up/4d1cab76-d06a-433a-a22e-5833cad186cb.png<>uid://bjqdq72tpjtv::::res://Assets/Sprites/spr_player_idl_up/616441a3-15a2-4e03-8c77-264cec281492.png<>uid://bfg812sm7kvpv::::res://Assets/Sprites/spr_player_down/4e73d772-464c-4772-8403-ee750b1c05e0.png<>uid://e1k4s52cl10::::res://Assets/Sprites/spr_player_down/e8a9b711-3996-4d79-bdcf-38950db000b9.png<>uid://d8l7arw80oc4::::res://Assets/Sprites/spr_player_down/9f8f7ed7-23cb-4574-a187-d3dc0e56f457.png<>uid://eerjq3rgliuw::::res://Assets/Sprites/spr_player_down/f863c7aa-4712-441a-bf9f-e841cb2984bf.png<>uid://qdwhm5kdfuvv::::res://Assets/Sprites/spr_player_left/97c162d8-eb85-4027-89a9-a3e1c7061228.png<>uid://chaactjuha4a7::::res://Assets/Sprites/spr_player_left/73bd93f6-e9b5-4088-b386-65597c3a9744.png<>uid://e2sm71vddher::::res://Assets/Sprites/spr_player_left/3891f80f-3ac3-41a4-a468-527abbfea489.png<>uid://dl3wdbqdu7klw::::res://Assets/Sprites/spr_player_left/f2175d88-6338-4540-a869-e12de9a2b3ac.png<>uid://bgqw0mutwgdlk::::res://Assets/Sprites/spr_player_right/8f19f55f-0175-4fcd-af53-4b776180b50b.png<>uid://xaliqsh765q4::::res://Assets/Sprites/spr_player_right/8d4e3a19-d1b5-4b27-8726-075b75470a0d.png<>uid://chbkw5thvq0ff::::res://Assets/Sprites/spr_player_right/be997335-2417-4ac0-a8b7-2297a392fdf3.png<>uid://dsisxj8u2h8xi::::res://Assets/Sprites/spr_player_right/f863c7aa-4712-441a-bf9f-e841cb2984bf.png<>uid://c1w8elrub05x8::::res://Assets/Sprites/spr_player_up/d715e099-a6e7-498c-ab95-d73a66e65b9b.png<>uid://dmbylxiwrune1::::res://Assets/Sprites/spr_player_up/4d1cab76-d06a-433a-a22e-5833cad186cb.png<>uid://cheavmwowkn5q::::res://Assets/Sprites/spr_player_up/616441a3-15a2-4e03-8c77-264cec281492.png<>uid://bdgjne7llh0ub::::res://Assets/Sprites/spr_player_up/6a028244-1245-4904-8bc5-7bef2b6ae871.png
+strawberry.tscn::PackedScene::1952034371413230427::1699567346::0::1::::<><>::res://Scripts/strawberry.gd<>uid://cuydttaxpol3s::::res://Interaction/interact_area.tscn<>uid://ccj2g3ovf5olf::::res://Assets/Objects/food_sheet.png
+::res://Scripts/::1699504851
+Box.gd::GDScript::-1::1699504489::0::1::::<>StaticBody2D<>::
 FollowCam.gd::GDScript::-1::1699417054::0::1::::<>Camera2D<>::
+InteractionArea.gd::GDScript::-1::1699504832::0::1::::InteractionArea<>Area2D<>::
+InteractionManager.gd::GDScript::-1::1699504851::0::1::::<>Node2D<>::
 Main.gd::GDScript::-1::1699417535::0::1::::<>Node2D<>::
-mitter.gd::GDScript::-1::1699416981::0::1::::<>CharacterBody2D<>::
+Player.gd::GDScript::-1::1699494786::0::1::::<>CharacterBody2D<>::
+strawberry.gd::GDScript::-1::1699504489::0::1::::<>Node2D<>::

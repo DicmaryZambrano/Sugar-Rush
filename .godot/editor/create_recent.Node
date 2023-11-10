@@ -1,3 +1,11 @@
+CollisionShape2D
+StaticBody2D
 AnimatedSprite2D
+Sprite2D
+RayCast2D
+Area2D
+Label
+Node2D
+Marker2D
 CharacterBody2D
 Button

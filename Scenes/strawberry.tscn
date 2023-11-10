@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://22tyrmkqdco6"]
+
+[ext_resource type="Script" path="res://Scripts/strawberry.gd" id="1_6n2ll"]
+[ext_resource type="PackedScene" uid="uid://cuydttaxpol3s" path="res://Interaction/interact_area.tscn" id="2_3uyru"]
+[ext_resource type="Texture2D" uid="uid://ccj2g3ovf5olf" path="res://Assets/Objects/food_sheet.png" id="2_4rv7b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfftc"]
+atlas = ExtResource("2_4rv7b")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nimbs"]
+radius = 24.0832
+
+[node name="Strawberry" type="Node2D"]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_6n2ll")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_rfftc")
+offset = Vector2(0, -24)
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_3uyru")]
+position = Vector2(0, -22)
+action_name = "grab"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_nimbs")

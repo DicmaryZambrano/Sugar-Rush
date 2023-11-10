@@ -1,5 +1,11 @@
-res://Scripts/Main.gd
 res://Scenes/main.tscn
-res://Scenes/mitter.tscn
-res://Scenes/kitchen.tscn
 res://Scenes/player.tscn
+res://Scenes/kitchen.tscn
+res://Scenes/box.tscn
+res://Interaction/interact_area.tscn
+res://Interaction/interaction_manager.tscn
+res://Scenes/strawberry.tscn
+res://Scripts/InteractionManager.gd
+res://Customer.gd
+res://Scenes/customer.tscn
+res://Scenes/milk.tscn
