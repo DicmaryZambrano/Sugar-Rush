@@ -22,8 +22,7 @@ offset = Vector2(0, -24)
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_3uyru")]
 position = Vector2(0, -22)
-action_name = "grab"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(0, 4)
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_nimbs")

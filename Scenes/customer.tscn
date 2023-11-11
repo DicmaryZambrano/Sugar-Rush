@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bywc1e4eendjg"]
 
-[ext_resource type="Script" path="res://Customer.gd" id="1_q7xjq"]
+[ext_resource type="Script" path="res://Scripts/Customer.gd" id="1_q7xjq"]
 [ext_resource type="Texture2D" uid="uid://ch0v087jakit0" path="res://Assets/Environment/kitchen_sheet.png" id="2_q5qql"]
 [ext_resource type="PackedScene" uid="uid://cuydttaxpol3s" path="res://Interaction/interact_area.tscn" id="3_ufrya"]
 
@@ -73,9 +73,9 @@ frame_progress = 0.964424
 offset = Vector2(0, -16)
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_ufrya")]
-position = Vector2(0, -17)
+position = Vector2(0, -27)
 action_name = "talk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(0, 10)
+position = Vector2(0, 15)
 shape = SubResource("CircleShape2D_dkotc")

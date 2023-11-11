@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://drxhcl7t25xed"]
+[gd_scene load_steps=12 format=3 uid="uid://drxhcl7t25xed"]
 
 [ext_resource type="Texture2D" uid="uid://ch0v087jakit0" path="res://Assets/Environment/kitchen_sheet.png" id="1_f665h"]
 [ext_resource type="PackedScene" uid="uid://b6bjnr0s7lado" path="res://Scenes/player.tscn" id="2_olyiw"]
+[ext_resource type="Script" path="res://Scripts/Strawberries.gd" id="2_rg6xg"]
 [ext_resource type="PackedScene" uid="uid://bywc1e4eendjg" path="res://Scenes/customer.tscn" id="3_abr6j"]
 [ext_resource type="Script" path="res://Scripts/FollowCam.gd" id="3_mqay6"]
-[ext_resource type="PackedScene" uid="uid://22tyrmkqdco6" path="res://Scenes/strawberry.tscn" id="5_ngusn"]
+[ext_resource type="FontFile" uid="uid://y0frbrfclcxq" path="res://Assets/Fonts/kenney_kenney-fonts/Fonts/Kenney Pixel.ttf" id="5_mdpdl"]
+[ext_resource type="Script" path="res://Scripts/Points.gd" id="6_gvriy"]
+[ext_resource type="Script" path="res://Scripts/Ingedients.gd" id="7_n3gc1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_86bf2"]
 texture = ExtResource("1_f665h")
@@ -461,6 +464,10 @@ texture = ExtResource("1_f665h")
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_86bf2")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_kavy1"]
+atlas = ExtResource("1_f665h")
+region = Rect2(128, 80, 16, 16)
+
 [node name="Kitchen" type="Node2D"]
 y_sort_enabled = true
 
@@ -476,7 +483,7 @@ layer_1/modulate = Color(1, 1, 1, 1)
 layer_1/y_sort_enabled = true
 layer_1/y_sort_origin = 0
 layer_1/z_index = 1
-layer_1/tile_data = PackedInt32Array(327693, 196609, 2, 327694, 327681, 0, 327692, 393217, 0, 327691, 327681, 0, 327690, 262145, 0, 327689, 1, 6, 327696, 65537, 1, 262160, 65537, 0, 393232, 65537, 1, 458768, 65537, 2, 524304, 65537, 3, 327695, 393217, 0, 327684, 262145, 0, 327685, 327681, 0, 327686, 458753, 0, 327683, 196609, 0, 327682, 262145, 0, 327681, 131073, 1, 262145, 131073, 0, 393217, 131073, 1, 458753, 131073, 2, 524289, 131073, 3, 196610, 196609, 4, 196611, 196609, 5, 196612, 327681, 5, 262146, 1, 4, 196613, 262145, 4, 262150, 131073, 4, 327687, 589825, 9, 196619, 196609, 5, 196618, 196609, 5, 196620, 262145, 5, 196621, 327681, 5, 262158, 65537, 4, 262159, 131073, 4, 262154, 1, 4, 458759, 262145, 6, 458760, 262145, 6, 458761, 262145, 6, 458758, 196609, 6, 458762, 327681, 6, 524294, 196609, 7, 524295, 262145, 7, 524296, 262145, 7, 524297, 262145, 7, 524298, 327681, 7, 589830, 196609, 8, 589831, 262145, 8, 589832, 262145, 8, 589833, 262145, 8, 589834, 327681, 8, 786433, 458753, 2, 786434, 458753, 0, 786437, 458753, 2, 786438, 458753, 5, 786439, 458753, 5, 786440, 458753, 5, 786441, 458753, 5, 786442, 458753, 5, 786443, 458753, 5, 786444, 458753, 0, 786447, 458753, 2, 786448, 458753, 0, 589840, 65537, 7, 851975, 65537, 7, 851977, 131073, 7, 1179649, 131073, 7, 1179664, 65537, 7, 1179653, 65537, 7, 1179658, 131073, 7, 1179651, 196609, 11, 917507, 262145, 10, 917509, 262145, 10, 1048579, 1, 9, 1048588, 1, 9, 1179661, 196609, 11, 655361, 131073, 7, 917516, 262145, 10, 917518, 262145, 10)
+layer_1/tile_data = PackedInt32Array(327693, 196609, 2, 327694, 327681, 0, 327692, 393217, 0, 327691, 327681, 0, 327690, 262145, 0, 327689, 1, 6, 327696, 65537, 1, 262160, 65537, 0, 393232, 65537, 1, 458768, 65537, 2, 524304, 65537, 3, 327695, 393217, 0, 327684, 262145, 0, 327685, 327681, 0, 327686, 458753, 0, 327683, 196609, 0, 327682, 262145, 0, 327681, 131073, 1, 262145, 131073, 0, 393217, 131073, 1, 458753, 131073, 2, 524289, 131073, 3, 196610, 196609, 4, 196611, 196609, 5, 196612, 327681, 5, 262146, 1, 4, 196613, 262145, 4, 262150, 131073, 4, 327687, 589825, 9, 196619, 196609, 5, 196618, 196609, 5, 196620, 262145, 5, 196621, 327681, 5, 262158, 65537, 4, 262159, 131073, 4, 262154, 1, 4, 458759, 262145, 6, 458760, 262145, 6, 458761, 262145, 6, 458758, 196609, 6, 458762, 327681, 6, 524294, 196609, 7, 524295, 262145, 7, 524296, 262145, 7, 524297, 262145, 7, 524298, 327681, 7, 589830, 196609, 8, 589831, 262145, 8, 589832, 262145, 8, 589833, 262145, 8, 589834, 327681, 8, 786433, 458753, 2, 786434, 458753, 0, 786437, 458753, 2, 786438, 458753, 5, 786439, 458753, 5, 786440, 458753, 5, 786441, 458753, 5, 786442, 458753, 5, 786443, 458753, 5, 786444, 458753, 0, 786447, 458753, 2, 786448, 458753, 0, 589840, 65537, 7, 1179649, 131073, 7, 1179664, 65537, 7, 1179653, 65537, 7, 1179658, 131073, 7, 1179651, 196609, 11, 917507, 262145, 10, 917509, 262145, 10, 1048579, 1, 9, 1048588, 1, 9, 1179661, 196609, 11, 655361, 131073, 7, 917516, 262145, 10, 917518, 262145, 10, 851969, 65537, 7, 851984, 131073, 7)
 layer_2/name = "Decoration"
 layer_2/enabled = true
 layer_2/modulate = Color(1, 1, 1, 1)
@@ -492,8 +499,19 @@ layer_3/y_sort_origin = 0
 layer_3/z_index = 2
 layer_3/tile_data = PackedInt32Array(196617, 65537, 6)
 
-[node name="Strawberry" parent="." instance=ExtResource("5_ngusn")]
-position = Vector2(104, 144)
+[node name="Milks" type="Node2D" parent="."]
+
+[node name="Timer" type="Timer" parent="Milks"]
+wait_time = 10.0
+autostart = true
+
+[node name="Strawberries" type="Node2D" parent="."]
+y_sort_enabled = true
+script = ExtResource("2_rg6xg")
+
+[node name="Timer" type="Timer" parent="Strawberries"]
+wait_time = 10.0
+autostart = true
 
 [node name="Customer" parent="." instance=ExtResource("3_abr6j")]
 position = Vector2(200, 240)
@@ -509,3 +527,42 @@ limit_right = 1056
 limit_bottom = 384
 script = ExtResource("3_mqay6")
 tile_map = NodePath("../../TileMap")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Points" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.0
+offset_right = 24.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.988235, 0.988235, 0.988235, 1)
+theme_override_fonts/font = ExtResource("5_mdpdl")
+theme_override_font_sizes/font_size = 15
+text = "x "
+script = ExtResource("6_gvriy")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Points"]
+position = Vector2(-8, 8)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_kavy1")
+
+[node name="Strawberries" type="Label" parent="CanvasLayer"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 109.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_mdpdl")
+theme_override_font_sizes/font_size = 15
+text = "x"
+script = ExtResource("7_n3gc1")
+
+[connection signal="timeout" from="Strawberries/Timer" to="Strawberries" method="_on_timer_timeout"]

@@ -5,6 +5,9 @@ extends CharacterBody2D
 #@onready var ray: RayCast2D = $RayCast2D
 var direction : Vector2 = Vector2.ZERO
 
+var inventory = {"Strawberry": 0, "Milk": 0, "Sugar": 0}
+var cake = {}
+
 func _ready():
 	anim_tree.active = true
 
@@ -40,3 +43,8 @@ func update_animation():
 #func update_marker():
 #	if direction != Vector2.ZERO:
 #		ray.target_position = direction * 16
+
+func _on_strawberry_collected():
+	# Access the inventory arra
+	inventory.append("Strawberry")
+	print(inventory)

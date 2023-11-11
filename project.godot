@@ -18,6 +18,8 @@ config/icon="res://Assets/icon.svg"
 [autoload]
 
 InteractionManager="*res://Interaction/interaction_manager.tscn"
+Game="*res://Global/Game.gd"
+Utils="*res://Global/Utils.gd"
 
 [display]
 
