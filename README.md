@@ -23,3 +23,4 @@ and cook a cake for your costumer to give you points before the time runs out. O
 - create new ingredients
 - add more customers with random positions and requests
 - fix visual bugs in character movement
+- fix bug when player clicks an item before it is done dissapearing
