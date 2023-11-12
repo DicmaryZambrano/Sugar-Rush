@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctsatjmpqwf7w"]
+
+[ext_resource type="FontFile" uid="uid://bdlftxgeip372" path="res://Assets/Fonts/kenney_kenney-fonts/Fonts/Kenney Mini Square Mono.ttf" id="1_hwar3"]
+[ext_resource type="Script" path="res://Scripts/ItemCounterLabel.gd" id="2_d47jt"]
+
+[node name="ItemCounterLabel" type="Label"]
+offset_left = 13.0
+offset_top = 3.0
+offset_right = 53.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_hwar3")
+theme_override_font_sizes/font_size = 5
+text = "x"
+vertical_alignment = 1
+script = ExtResource("2_d47jt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5, 5)

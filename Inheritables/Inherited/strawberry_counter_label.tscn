@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://drwrti5tibhxu"]
+
+[ext_resource type="PackedScene" uid="uid://ctsatjmpqwf7w" path="res://Inheritables/ItemCounterLabel.tscn" id="1_0d5vl"]
+[ext_resource type="Texture2D" uid="uid://duhyj8821nvu5" path="res://Assets/Environment/ingredient.png" id="2_0l4qw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cl4ui"]
+atlas = ExtResource("2_0l4qw")
+region = Rect2(0, 0, 16, 16)
+
+[node name="StrawberryCounterLabel" instance=ExtResource("1_0d5vl")]
+item_key = "Strawberry"
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-5, 3)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_cl4ui")

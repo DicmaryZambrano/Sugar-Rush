@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdcf5baa16vv"]
+
+[ext_resource type="PackedScene" uid="uid://ctsatjmpqwf7w" path="res://Inheritables/ItemCounterLabel.tscn" id="1_ech63"]
+[ext_resource type="Texture2D" uid="uid://duhyj8821nvu5" path="res://Assets/Environment/food_sheet.png" id="2_oa45q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4b34"]
+atlas = ExtResource("2_oa45q")
+region = Rect2(16, 16, 16, 16)
+
+[node name="CakeCounterLabel" instance=ExtResource("1_ech63")]
+item_key = "Cake"
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_g4b34")

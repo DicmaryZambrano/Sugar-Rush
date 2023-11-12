@@ -3,10 +3,11 @@
 [ext_resource type="FontFile" uid="uid://y0frbrfclcxq" path="res://Assets/Fonts/kenney_kenney-fonts/Fonts/Kenney Pixel.ttf" id="1_ikbay"]
 [ext_resource type="Script" path="res://Scripts/InteractionManager.gd" id="1_ms882"]
 
-[node name="InteractionManager" type="Node2D"]
+[node name="InteractionManager" type="Node2D" groups=["manager"]]
 script = ExtResource("1_ms882")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 z_index = 20
 anchors_preset = 5
 anchor_left = 0.5

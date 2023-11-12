@@ -1,8 +1,26 @@
-[gd_scene load_steps=11 format=3 uid="uid://bywc1e4eendjg"]
+[gd_scene load_steps=17 format=3 uid="uid://bywc1e4eendjg"]
 
 [ext_resource type="Script" path="res://Scripts/Customer.gd" id="1_q7xjq"]
+[ext_resource type="Texture2D" uid="uid://dkeasek6t3iu1" path="res://Dialogue/text_box.png" id="2_lbrft"]
 [ext_resource type="Texture2D" uid="uid://ch0v087jakit0" path="res://Assets/Environment/kitchen_sheet.png" id="2_q5qql"]
-[ext_resource type="PackedScene" uid="uid://cuydttaxpol3s" path="res://Interaction/interact_area.tscn" id="3_ufrya"]
+[ext_resource type="Texture2D" uid="uid://duhyj8821nvu5" path="res://Assets/Environment/food_sheet.png" id="3_7uq38"]
+[ext_resource type="FontFile" uid="uid://y0frbrfclcxq" path="res://Assets/Fonts/kenney_kenney-fonts/Fonts/Kenney Pixel.ttf" id="5_64ah6"]
+[ext_resource type="AudioStream" uid="uid://c3bkvhdcffn7f" path="res://Assets/Sounds/SoundEffects/happy.wav" id="6_ccd3o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0n1r4"]
+radius = 22.2036
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rs57k"]
+atlas = ExtResource("2_lbrft")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnlxd"]
+atlas = ExtResource("3_7uq38")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvxgs"]
+atlas = ExtResource("2_q5qql")
+region = Rect2(128, 80, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dg6gh"]
 size = Vector2(16, 7.5)
@@ -53,13 +71,44 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dkotc"]
-radius = 25.02
-
 [node name="Customer" type="StaticBody2D"]
 z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_q7xjq")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_0n1r4")
+
+[node name="Message" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Message"]
+position = Vector2(0, -56)
+texture = SubResource("AtlasTexture_rs57k")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Message"]
+position = Vector2(-12, -57)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_jnlxd")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Message"]
+position = Vector2(11, -57)
+scale = Vector2(0.53125, 0.5)
+texture = SubResource("AtlasTexture_cvxgs")
+
+[node name="instructions" type="Label" parent="Message"]
+offset_left = -6.0
+offset_top = -62.0
+offset_right = 34.0
+offset_bottom = -39.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_64ah6")
+theme_override_font_sizes/font_size = 10
+text = "x 1 ="
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3.75)
@@ -72,10 +121,8 @@ autoplay = "idle"
 frame_progress = 0.964424
 offset = Vector2(0, -16)
 
-[node name="InteractionArea" parent="." instance=ExtResource("3_ufrya")]
-position = Vector2(0, -27)
-action_name = "talk"
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_ccd3o")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(0, 15)
-shape = SubResource("CircleShape2D_dkotc")
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]

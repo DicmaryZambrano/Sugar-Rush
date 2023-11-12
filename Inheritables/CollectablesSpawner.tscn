@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyov38eeg1kvg"]
+
+[ext_resource type="Script" path="res://Scripts/CollectablesSpawner.gd" id="1_3rm0e"]
+[ext_resource type="AudioStream" uid="uid://csddlk8sq1fed" path="res://Assets/Sounds/SoundEffects/pickItem.wav" id="2_jaqee"]
+
+[node name="CollectablesSpawner" type="Node2D"]
+script = ExtResource("1_3rm0e")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_jaqee")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

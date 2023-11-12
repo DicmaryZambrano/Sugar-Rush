@@ -2,8 +2,9 @@ extends Camera2D
 
 @export var tile_map : TileMap 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	#gets the boundries of the tile map and limits the movement
+	#of the camera based on that
 	var visibleArea = tile_map.get_used_rect();
 	var tileSize = tile_map.cell_quadrant_size;
 	var upperLeftCorner = visibleArea.position * tileSize;

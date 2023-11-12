@@ -1,13 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://drxhcl7t25xed"]
+[gd_scene load_steps=16 format=3 uid="uid://drxhcl7t25xed"]
 
+[ext_resource type="PackedScene" uid="uid://dt6twu5y4k1lg" path="res://Scenes/oven.tscn" id="1_3hjcq"]
 [ext_resource type="Texture2D" uid="uid://ch0v087jakit0" path="res://Assets/Environment/kitchen_sheet.png" id="1_f665h"]
+[ext_resource type="Script" path="res://Scripts/Kitchen.gd" id="1_navjj"]
 [ext_resource type="PackedScene" uid="uid://b6bjnr0s7lado" path="res://Scenes/player.tscn" id="2_olyiw"]
-[ext_resource type="Script" path="res://Scripts/Strawberries.gd" id="2_rg6xg"]
-[ext_resource type="PackedScene" uid="uid://bywc1e4eendjg" path="res://Scenes/customer.tscn" id="3_abr6j"]
 [ext_resource type="Script" path="res://Scripts/FollowCam.gd" id="3_mqay6"]
-[ext_resource type="FontFile" uid="uid://y0frbrfclcxq" path="res://Assets/Fonts/kenney_kenney-fonts/Fonts/Kenney Pixel.ttf" id="5_mdpdl"]
-[ext_resource type="Script" path="res://Scripts/Points.gd" id="6_gvriy"]
-[ext_resource type="Script" path="res://Scripts/Ingedients.gd" id="7_n3gc1"]
+[ext_resource type="PackedScene" uid="uid://1kykfmlhgfpq" path="res://Inheritables/Inherited/coin_counter_label.tscn" id="6_yvta4"]
+[ext_resource type="PackedScene" uid="uid://cdcf5baa16vv" path="res://Inheritables/Inherited/cake_counter_label.tscn" id="7_6eiy8"]
+[ext_resource type="PackedScene" uid="uid://btybgec7byngb" path="res://Inheritables/Inherited/strawberries_spawner.tscn" id="7_qokxq"]
+[ext_resource type="PackedScene" uid="uid://drwrti5tibhxu" path="res://Inheritables/Inherited/strawberry_counter_label.tscn" id="8_bqgh8"]
+[ext_resource type="AudioStream" uid="uid://dlbbng3t3fgjf" path="res://Assets/Sounds/Cozy_Little_Bakery.wav" id="8_poacd"]
+[ext_resource type="PackedScene" uid="uid://bywc1e4eendjg" path="res://Scenes/customer.tscn" id="10_pratf"]
+[ext_resource type="FontFile" uid="uid://y0frbrfclcxq" path="res://Assets/Fonts/kenney_kenney-fonts/Fonts/Kenney Pixel.ttf" id="11_s7v6l"]
+[ext_resource type="Script" path="res://Scripts/TimeDown.gd" id="12_nra2m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_86bf2"]
 texture = ExtResource("1_f665h")
@@ -464,12 +469,9 @@ texture = ExtResource("1_f665h")
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_86bf2")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kavy1"]
-atlas = ExtResource("1_f665h")
-region = Rect2(128, 80, 16, 16)
-
 [node name="Kitchen" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_navjj")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -499,22 +501,13 @@ layer_3/y_sort_origin = 0
 layer_3/z_index = 2
 layer_3/tile_data = PackedInt32Array(196617, 65537, 6)
 
-[node name="Milks" type="Node2D" parent="."]
-
-[node name="Timer" type="Timer" parent="Milks"]
-wait_time = 10.0
-autostart = true
-
-[node name="Strawberries" type="Node2D" parent="."]
-y_sort_enabled = true
-script = ExtResource("2_rg6xg")
-
-[node name="Timer" type="Timer" parent="Strawberries"]
-wait_time = 10.0
-autostart = true
-
-[node name="Customer" parent="." instance=ExtResource("3_abr6j")]
+[node name="Customer" parent="." instance=ExtResource("10_pratf")]
 position = Vector2(200, 240)
+
+[node name="Oven" parent="." instance=ExtResource("1_3hjcq")]
+position = Vector2(216, 104)
+
+[node name="StrawberriesSpawner" parent="." instance=ExtResource("7_qokxq")]
 
 [node name="Player" parent="." instance=ExtResource("2_olyiw")]
 position = Vector2(80, 128)
@@ -530,39 +523,42 @@ tile_map = NodePath("../../TileMap")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Points" type="Label" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.0
-offset_right = 24.0
-offset_bottom = 4.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0.988235, 0.988235, 0.988235, 1)
-theme_override_fonts/font = ExtResource("5_mdpdl")
-theme_override_font_sizes/font_size = 15
-text = "x "
-script = ExtResource("6_gvriy")
+[node name="CoinCounterLabel" parent="CanvasLayer" instance=ExtResource("6_yvta4")]
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 18.0
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Points"]
-position = Vector2(-8, 8)
-scale = Vector2(0.5, 0.5)
-texture = SubResource("AtlasTexture_kavy1")
-
-[node name="Strawberries" type="Label" parent="CanvasLayer"]
+[node name="StrawberryCounterLabel" parent="CanvasLayer" instance=ExtResource("8_bqgh8")]
 offset_left = 16.0
 offset_top = 16.0
-offset_right = 109.0
-offset_bottom = 42.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_mdpdl")
-theme_override_font_sizes/font_size = 15
-text = "x"
-script = ExtResource("7_n3gc1")
+offset_right = 56.0
+offset_bottom = 26.0
 
-[connection signal="timeout" from="Strawberries/Timer" to="Strawberries" method="_on_timer_timeout"]
+[node name="CakeCounterLabel" parent="CanvasLayer" instance=ExtResource("7_6eiy8")]
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 56.0
+offset_bottom = 34.0
+
+[node name="TimeDown" type="Label" parent="CanvasLayer"]
+offset_left = 144.0
+offset_top = 8.0
+offset_right = 193.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_s7v6l")
+theme_override_font_sizes/font_size = 10
+text = "30
+"
+script = ExtResource("12_nra2m")
+
+[node name="Timer" type="Timer" parent="CanvasLayer/TimeDown"]
+wait_time = 60.0
+autostart = true
+
+[node name="CozyBakery" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_poacd")
+autoplay = true
+
+[connection signal="timeout" from="CanvasLayer/TimeDown/Timer" to="." method="_on_timer_timeout"]

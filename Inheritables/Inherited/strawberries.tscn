@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://qiuvind3hm2v"]
+
+[ext_resource type="PackedScene" uid="uid://c2t61atru0jss" path="res://Inheritables/Collectable.tscn" id="1_ddgg1"]
+[ext_resource type="Texture2D" uid="uid://duhyj8821nvu5" path="res://Assets/Environment/food_sheet.png" id="2_g87b0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_moc0v"]
+atlas = ExtResource("2_g87b0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s77ij"]
+radius = 21.0
+
+[node name="Strawberries" instance=ExtResource("1_ddgg1")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("AtlasTexture_moc0v")
+
+[node name="InteractionArea" parent="." index="1"]
+position = Vector2(0, -23)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0"]
+position = Vector2(0, 10)
+shape = SubResource("CircleShape2D_s77ij")

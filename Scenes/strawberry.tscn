@@ -1,8 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://22tyrmkqdco6"]
+[gd_scene load_steps=6 format=3 uid="uid://gpiynrlyfgr5"]
 
-[ext_resource type="Script" path="res://Scripts/strawberry.gd" id="1_6n2ll"]
 [ext_resource type="PackedScene" uid="uid://cuydttaxpol3s" path="res://Interaction/interact_area.tscn" id="2_3uyru"]
 [ext_resource type="Texture2D" uid="uid://ccj2g3ovf5olf" path="res://Assets/Objects/food_sheet.png" id="2_4rv7b"]
+
+[sub_resource type="GDScript" id="GDScript_8hudv"]
+script/source = "extends Node2D
+signal itemCollected(position: Vector2)
+
+@onready var interaction_area: InteractionArea = $InteractionArea
+
+func _ready():
+	interaction_area.interact = Callable(self,\"_on_interact\")
+
+func _on_interact():
+	emit_signal(\"itemCollected\",position)
+	var tween = get_tree().create_tween()
+	var tween1 = get_tree().create_tween()
+	tween.tween_property(self,\"position\", position- Vector2(0,20),0.2)
+	tween1.tween_property(self,\"modulate:a\", 0, 0.1)
+	tween.tween_callback(self.queue_free)
+"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rfftc"]
 atlas = ExtResource("2_4rv7b")
@@ -14,7 +31,7 @@ radius = 24.0832
 [node name="Strawberry" type="Node2D"]
 z_index = 1
 y_sort_enabled = true
-script = ExtResource("1_6n2ll")
+script = SubResource("GDScript_8hudv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_rfftc")

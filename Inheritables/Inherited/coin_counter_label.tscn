@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://1kykfmlhgfpq"]
+
+[ext_resource type="PackedScene" uid="uid://ctsatjmpqwf7w" path="res://Inheritables/ItemCounterLabel.tscn" id="1_ectqx"]
+[ext_resource type="Script" path="res://Scripts/CoinCounterLabel.gd" id="2_k73k2"]
+[ext_resource type="Texture2D" uid="uid://ch0v087jakit0" path="res://Assets/Environment/kitchen_sheet.png" id="2_lj3li"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nkfy"]
+atlas = ExtResource("2_lj3li")
+region = Rect2(128, 80, 16, 16)
+
+[node name="CoinCounterLabel" instance=ExtResource("1_ectqx")]
+script = ExtResource("2_k73k2")
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_2nkfy")

@@ -29,6 +29,10 @@ window/size/window_width_override=640
 window/size/window_height_override=640
 window/stretch/mode="canvas_items"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 up={

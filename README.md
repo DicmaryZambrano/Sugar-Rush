@@ -1,32 +1,25 @@
-# Overview
+#Overview
 
-{Important! Do not say in this section that this is college assignment. Talk about what you are trying to accomplish as a software engineer to further your learning.}
+A simple cooking game created with the Godot Engine with the purpose of practicing basic concepts like composition, inheritance, object-oriented principles on Godot and game development
+In this game you move with WASD and interact with E. You will have to look for ingredient in the kitchen
+and cook a cake for your costumer to give you points before the time runs out. Once the game ends your highest score will be save on your computer
 
-{Provide a description the game that you wrote. Describe how to play your game.}
-
-{Describe your purpose for writing this software.}
-
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the game being played and a walkthrough of the code.}
 
 [Software Demo Video](http://youtube.link.goes.here)
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
-
-{Describe the programming language that you used and any libraries.}
+- Godot 4.1
+- GDscript
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-
-- [Web Site Name](http://url.link.goes.here)
-- [Web Site Name](http://url.link.goes.here)
+- [Godot Documentation 4.1] (https://docs.godotengine.org/en/stable/)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-
-- Item 1
-- Item 2
-- Item 3
+- fix repeated code by creating inheritable classes
+- create new types of cakes for the player to make
+- create new ingredients
+- add more customers with random positions and requests
+- fix visual bugs in character movement

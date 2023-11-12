@@ -2,16 +2,15 @@ extends CharacterBody2D
 
 @export var speed : float = 100.0
 @onready var anim_tree : AnimationTree = $AnimationTree
-#@onready var ray: RayCast2D = $RayCast2D
 var direction : Vector2 = Vector2.ZERO
 
-var inventory = {"Strawberry": 0, "Milk": 0, "Sugar": 0}
-var cake = {}
-
 func _ready():
+	# set up the player animation and send player to the Game singleton
+	Game.Player = self
 	anim_tree.active = true
 
 func handle_input():
+	#handle input by getting the vector of each key press
 	direction = Input.get_vector("left","right","up","down").normalized()
 	
 	if direction:
@@ -21,14 +20,16 @@ func handle_input():
 		velocity = Vector2.ZERO
 		
 func _physics_process(delta):
+	#move the player by multiplying velocity, speed and delta
+	#this is handeled by move_and_slide
 	handle_input()
 	move_and_slide()
 
 func _process(delta):
 	update_animation()
-#	update_marker()
 
 func update_animation():
+	#update the animations depending of the vector
 	if velocity == Vector2.ZERO:
 		anim_tree["parameters/conditions/idle"] = true
 		anim_tree["parameters/conditions/is_moving"] = false
@@ -40,11 +41,3 @@ func update_animation():
 		anim_tree["parameters/Idle/blend_position"] = direction
 		anim_tree["parameters/Walk/blend_position"] = direction
 
-#func update_marker():
-#	if direction != Vector2.ZERO:
-#		ray.target_position = direction * 16
-
-func _on_strawberry_collected():
-	# Access the inventory arra
-	inventory.append("Strawberry")
-	print(inventory)
