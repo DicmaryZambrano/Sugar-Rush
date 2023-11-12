@@ -7,7 +7,7 @@
 z_index = 1
 y_sort_enabled = true
 collectable = ExtResource("2_g8vst")
-ypositions = [160, 160, 144, 144]
-xpositions = [104, 120, 136, 152]
-maxSpawnCount = 4
+ypositions = [160, 144, 160, 144, 160, 144, 160, 144, 160, 144]
+xpositions = [104, 120, 136, 152, 168, 104, 120, 136, 152, 168]
+maxSpawnCount = 10
 collectableKey = "Strawberry"

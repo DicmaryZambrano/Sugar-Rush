@@ -11,6 +11,7 @@ func _on_interact():
 	#emits a signal to any listening node
 	#no notify the current position of the item
 	#and if it has been collected
+	interaction_area.monitoring = false
 	emit_signal("itemCollected",position)
 	var tween = get_tree().create_tween()
 	var tween1 = get_tree().create_tween()
