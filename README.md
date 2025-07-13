@@ -6,6 +6,7 @@ and cook a cake for your customer to give you points before the time runs out. O
 
 
 [Game Demonstration](https://youtu.be/1hknQaHC3us)
+[Browser Version](https://cerealstrike.itch.io/sugar-rush)
 
 # Development Environment
 
